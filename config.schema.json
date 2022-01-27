@@ -1,5 +1,5 @@
 {
-    "pluginAlias": "mqttthing",
+    "pluginAlias": "mqttthing-jarolift",
     "pluginType": "accessory",
     "schema": {
         "type": "object",

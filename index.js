@@ -3456,5 +3456,5 @@ module.exports = function( homebridge ) {
     HistoryService = fakegatoHistory( homebridge );
     homebridgePath = homebridge.user.storagePath();
 
-    homebridge.registerAccessory( "homebridge-mqttthing", "mqttthing", makeThing );
+    homebridge.registerAccessory( "homebridge-mqttthing-jarolift", "mqttthing-jarolift", makeThing );
 }

@@ -1,7 +1,7 @@
 {
-  "name": "homebridge-mqttthing",
+  "name": "homebridge-mqttthing-jarolift",
   "version": "1.1.38",
-  "description": "Homebridge plugin supporting various services over MQTT",
+  "description": "Homebridge plugin supporting the jarolift dongle over MQTT",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
