@@ -3,6 +3,22 @@
 [![Discord](https://img.shields.io/discord/432663330281226270?color=728ED5&logo=discord&label=discord)](https://discord.gg/MTpeMC)
 [![verified-by-homebridge](https://badgen.net/badge/homebridge/verified/purple)](https://github.com/homebridge/homebridge/wiki/Verified-Plugins)
 
+# Homebridge MQTT-Thing Jarolift
+This is a fork of [Homebridge MQTT-Thing](https://www.npmjs.com/package/homebridge-mqttthing) to invert the open/closed states of the window-covering accessory in order to match the behavior of the Jarolift Dongle that uses [Jarolift_MQTT](https://github.com/madmartin/Jarolift_MQTT).
+
+A sample config for the accessory looks like this:
+```
+        {
+            "type": "windowCovering",
+            "name": "Living Room Window Blind",
+            "topics": {
+                "getCurrentPosition": "stat/jarolift/shutter/0",
+                "setTargetPosition": "cmd/jarolift/shutter/0"
+            },
+            "accessory": "mqttthing-jarolift"
+        },
+```
+
 # Homebridge MQTT-Thing
 [Homebridge MQTT-Thing](https://www.npmjs.com/package/homebridge-mqttthing) is a plugin for [Homebridge](https://github.com/homebridge/homebridge) allowing the integration of [many different accessory types](#supported-accessories) using MQTT.
 
