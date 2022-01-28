@@ -460,7 +460,7 @@ function makeThing( log, accessoryConfig, api ) {
 
                 // get/set
                 charac.on( 'get', function( callback ) {
-                    handleGetStateCallback( callback, state[ property ] );
+                    handleGetStateCallback( callback, flip( state [ property ] ) );
                 } );
 
                 let onSet = function( value, context ) {
@@ -477,7 +477,7 @@ function makeThing( log, accessoryConfig, api ) {
 
                 if( setTopic || ( options && options.onSet ) ) {
                     charac.on( 'set', function( value, callback, context ) {
-                        onSet( value, context );
+                        onSet( flip( value ), context );
                         callback();
                     } );
                 }
@@ -495,12 +495,20 @@ function makeThing( log, accessoryConfig, api ) {
                             }
                             // update state and characteristic
                             state[ property ] = newState;
-                            setCharacteristic( charac, newState );
+                            setCharacteristic( charac, flip( state [ property ] ) );
                         }
                     } );
                 }
 
                 return { onSet };
+            }
+
+            function flip( value ) {
+                if ( value == 100 ) {
+                    return 0;
+                } else {
+                    return 100;
+                }
             }
 
             function addCharacteristic( service, property, characteristic, defaultValue, characteristicChanged, adaptiveEventName ) {
